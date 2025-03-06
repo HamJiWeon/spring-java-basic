@@ -13,14 +13,25 @@ java {
 	}
 }
 
+// lombok 설정 추가 시작
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+// lombok 설정 추가 끝
+
 repositories {
 	mavenCentral()
 }
 
 dependencies {
+
 	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
 }
 
 tasks.named('test') {
